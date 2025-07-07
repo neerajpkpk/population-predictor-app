@@ -27,6 +27,9 @@ import pickle
 import pandas as pd
 import plotly.graph_objs as go
 
+from django.core.management import call_command
+
+
 
 
 
@@ -49,6 +52,8 @@ def login_view(request):
 
 
 def register_view(request):
+    call_command("migrate")
+    
     if request.method == 'POST':
         uname = request.POST['username']
         email = request.POST['email']
