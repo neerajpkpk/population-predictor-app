@@ -26,7 +26,14 @@ SECRET_KEY = "django-insecure-p2t7o6%p8zfj&_h%nc3i2$zh+p19w^#5mbp!(jc%#0%7hy1bn4
 DEBUG = True
 
 import os
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+# ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "population-predictor-app.onrender.com"
+]
+
+
 
 
 
