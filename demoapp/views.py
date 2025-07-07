@@ -28,6 +28,15 @@ import pandas as pd
 import plotly.graph_objs as go
 
 
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
+def create_superuser(request):
+    if not User.objects.filter(username='admin').exists():
+        User.objects.create_superuser('admin', 'admin@example.com', 'adminpass123')
+        return HttpResponse("✅ Superuser created successfully.")
+    else:
+        return HttpResponse("ℹ️ Superuser already exists.")
 
 
 
